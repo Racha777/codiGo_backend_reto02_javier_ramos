@@ -143,6 +143,10 @@ def delProyecto(id=''):
 @admin.route('/mensajes',methods=['GET','POST'])
 def mensajes():
     if('token' in session):
-        return render_template('admin/mensajes.html')
+        listaMensajes=fb.getCollection('mensajes')
+        context={
+            'mensajes':listaMensajes
+        }
+        return render_template('admin/mensajes.html',**context)
     else:
         return redirect(url_for('admin.login'))

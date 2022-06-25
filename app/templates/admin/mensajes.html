@@ -12,7 +12,13 @@
             </tr>
         </thead>
         <tbody>
-            
+            {%for mensaje in mensajes%}
+            <tr>
+                <td>{{mensaje['nombre']}}</td>
+                <td>{{mensaje['email']}}</td>
+                <td>{{mensaje['mensaje']}}</td>
+            </tr>
+            {%endfor%}
         </tbody>
     </table>
 </div>
