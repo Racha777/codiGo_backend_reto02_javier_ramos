@@ -140,7 +140,7 @@ def delProyecto(id=''):
     else:
         return redirect(url_for('admin.login'))
 
-@admin.route('/mensajes')
+@admin.route('/mensajes',methods=['GET','POST'])
 def mensajes():
     if('token' in session):
         return render_template('admin/mensajes.html')
