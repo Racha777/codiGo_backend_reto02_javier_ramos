@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request,session
 
 from . import portafolio
+from .forms import ContactoForm
 
 from app import fb
 
@@ -26,4 +27,8 @@ def acercade():
 
 @portafolio.route('/contacto')
 def contacto():
-    return render_template('portafolio/contacto.html')
+    contacto_form=ContactoForm()
+    context={
+        'contacto_form':contacto_form
+    }
+    return render_template('portafolio/contacto.html',**context)
