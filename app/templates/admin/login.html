@@ -12,6 +12,7 @@
                             <div class="card-body">
                                 {{ render_form(login_form) }}
                             </div>
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/">Regresar a inicio</a>
                             <div class="card-footer text-center py-3">
                                 {%for message in get_flashed_messages() %}
                                     <div class ="alert alert-danger">
